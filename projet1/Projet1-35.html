@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet1-35</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        .g {
+            font-weight: bold;
+        }
+        .i {
+            font-style: italic;
+        }
+        .s {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <input type="checkbox" v-model="gras"><label>Gras</label>
+            <input type="checkbox" v-model="italique"><label>Italique</label>
+            <input type="checkbox" v-model="souligne"><label>Souligné</label>
+        </div>
+        <div :class="{g:gras ,i:italique ,s:souligne}">
+            Un peu de texte dans la div
+        </div>
+    </div>
+    <script>
+        let app = Vue.createApp({
+            data() {
+                return {
+                    gras: false,
+                    italique: false,
+                    souligne: false
+                }
+            }
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+
+</html>

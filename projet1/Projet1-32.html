@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet1-32</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        [vcloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div v-cloak>{{texte}}</div>
+    </div>
+    <script>
+        app = Vue.createApp({
+            data(){
+                return {
+                    texte: 'Bonjour'
+                }
+            },
+            methods: {
+                majuscule(){
+                    this.texte = this.texte.toUpperCase();
+               }
+            }
+        });
+        app.mount('#app');
+    </script>
+</body>
+</html>
